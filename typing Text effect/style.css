@@ -1,0 +1,69 @@
+@font-face {
+    font-family: "Montserrat-Light.ttf";
+    src: url(Montserrat/Montserrat-Light.ttf);
+}
+@font-face {
+    font-family: "Sofia-Regular.ttf";
+    src: url(Sofia/Sofia-Regular.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    line-height: 1.5rem;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background: linear-gradient(rgba(0, 255, 242, 0.2),rgba(0, 0, 0, 0.8)),url(pic7.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    color: white;
+    
+}
+.wrapper h1 {
+   font-weight: lighter;
+   font-size: 4rem;
+   line-height: 6rem;
+   font-family: "Montserrat-Light.ttf";
+}
+
+.wrapper h1 span {
+    font-family: "Sofia-Regular.ttf";
+    
+}
+
+.wrapper h1:nth-child(2) {
+   opacity: 0.8;
+}
+
+.insertedtext::after {
+    content: "";
+    border: none;
+    border-left: 3px solid white;
+    margin-left: 5px;
+    animation: blink 1s infinite ease;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main {
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grandp {
+            width: 300px;
+            height: 300px;
+            background: blueviolet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .parent {
+            width: 200px;
+            height: 200px;
+            background: chartreuse;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <title>EventBubbling</title>
+</head>
+
+<body>
+    <main class="main">
+        <div class="grandp">
+            <div class="parent">
+                <button class="child">Click</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.querySelector("body").addEventListener("click", () => {
+
+            document.querySelector("body").style.background = "hotpink";
+            setTimeout(() => {
+                alert("Body");
+            }, 0);
+
+        },true)
+        document.querySelector(".main").addEventListener("click", () => {
+
+            document.querySelector(".main").style.background = "red";
+            setTimeout(() => {
+                alert("Main Contaiener")
+            }, 0);
+        },true)
+        document.querySelector(".grandp").addEventListener("click", () => {
+
+            document.querySelector(".grandp").style.background = "orange"
+            setTimeout(() => {
+                alert("GrandParent Contaiener")
+            }, 0);
+        },true)
+        document.querySelector(".parent").addEventListener("click", () => {
+
+            document.querySelector(".parent").style.background = "blue"
+            setTimeout(() => {
+                alert("Parent Container");
+            }, 0);
+
+        },true)
+        document.querySelector(".child").addEventListener("click", () => {
+            setTimeout(() => {
+                alert("Hello,World! CHILD");
+            }, 0);
+        },true)
+    </script>
+</body>
+
+</html>
